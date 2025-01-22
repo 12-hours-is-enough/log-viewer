@@ -93,7 +93,7 @@ SSH 연결 관련 로그를 분석하여 비정상적인 접근 시도를 확인
 ## ⚙ 아키텍쳐
 
 <div align=center> 
-  <img src="https://github.com/user-attachments/assets/e4e06c2f-b8ac-4e74-a010-ecbadfbb70a9" width="600"/>
+  <img src="https://github.com/user-attachments/assets/4e7d297c-78d1-46bc-9a1b-a3323df799c8" width="600"/>
 </div>
 
 <br> <br>
