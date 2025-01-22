@@ -195,7 +195,9 @@ filter {
    }
 }
 
-# output 
+# output
+# output에 Elasticsearch과 MySQL을 사용하는 이유
+# Log기록은 영구저장되야 하기 때문에 MySQL에 적재, Elasticsearch 에서는 최신 log 저장 
 output {
    elasticsearch {
       hosts => ["http://localhost:9200"]
@@ -222,9 +224,11 @@ output {
    }
 }
 ```
-> output에 Elasticsearch과 MySQL을 사용하는 이유
->
-> Log기록은 영구저장되야 하기 때문에 MySQL에 적재, Elasticsearch 에서는 최신 log 저장
+
+> **dashboard.html**
+```
+<iframe src="http://192.168.0.148:5601/app/dashboards#/view/8efaf320-d857-11ef-8a0c-898cbf9caa76?embed=true&_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:'2025-01-21T04:57:33.358Z',to:'2025-01-21T09:00:00.000Z'))&_a=(description:'',filters:!(),fullScreenMode:!f,options:(hidePanelTitles:!f,useMargins:!t),panels:!((embeddableConfig:(enhancements:()),gridData:(h:11,i:aab96130-0228-4ab9-a6f8-4970712691e7,w:15,x:0,y:0),id:f3a38860-d7e8-11ef-8598-0f14851307c6,panelIndex:aab96130-0228-4ab9-a6f8-4970712691e7,type:lens,version:'7.11.1'),(embeddableConfig:(enhancements:()),gridData:(h:11,i:'3a9bc11e-7d60-44fe-b726-d7a436ee8b4d',w:17,x:15,y:0),id:'4c35a2b0-d7e9-11ef-8598-0f14851307c6',panelIndex:'3a9bc11e-7d60-44fe-b726-d7a436ee8b4d',type:lens,version:'7.11.1'),(embeddableConfig:(enhancements:()),gridData:(h:11,i:'379a09f2-d329-4792-b0db-da31ecfd8def',w:16,x:32,y:0),id:'4e1db9a0-d857-11ef-8a0c-898cbf9caa76',panelIndex:'379a09f2-d329-4792-b0db-da31ecfd8def',type:lens,version:'7.11.1'),(embeddableConfig:(enhancements:()),gridData:(h:15,i:c58d573d-225c-45a8-8eda-f1d872c9e782,w:21,x:0,y:11),id:d06b3260-d7ea-11ef-8598-0f14851307c6,panelIndex:c58d573d-225c-45a8-8eda-f1d872c9e782,type:lens,version:'7.11.1'),(embeddableConfig:(enhancements:()),gridData:(h:15,i:'6b02ac03-e0fb-4005-a953-b9c0aa6401f4',w:21,x:21,y:11),id:'461f7af0-d856-11ef-8a0c-898cbf9caa76',panelIndex:'6b02ac03-e0fb-4005-a953-b9c0aa6401f4',type:lens,version:'7.11.1')),query:(language:kuery,query:''),tags:!(),timeRestore:!f,title:dash,viewMode:view)" height="600" width="1300">
+```
 
 <br><br>
 
@@ -262,7 +266,7 @@ output {
  <br>
  
 **7. Kibana 시각화 📈** <br> <br>
-**◌ 시간대별 접속빈도**　　　　　　　　　　　　　　　　　　　　　　　**◌ IP주소별로 특정시간대 15분 간격의 접속시도횟수**
+**◌ 시간대별 접속빈도**　　　　　　　　　　　　　　　　　　　　　**◌ IP주소별로 특정시간대 15분 간격의 접속시도횟수**
 
 <img src="https://github.com/user-attachments/assets/2879bd8b-3831-4b39-8502-ccc54a445292" width="50%" heght="250"/><img src="https://github.com/user-attachments/assets/347a7cfc-5534-4bc4-a650-53c723a7b946" width="50%" height="250"/>
 
@@ -271,6 +275,9 @@ output {
 **◌ 접속여부별 시간당 그래프**　　　　　　　　　　　　　　　　　　　**◌ SSH접속 결과비율**
 
 <img src="https://github.com/user-attachments/assets/5702a4e5-2f0c-4aa4-a6ce-892375909080" width="60%" height="250"/><img src="https://github.com/user-attachments/assets/86c66f8e-3c4d-4874-a315-606501405bf1" width="30%" height="200"/>
+
+**8. Kibana 외부접속 허용** <br>
+![image](https://github.com/user-attachments/assets/3033e6f1-1603-4c98-a5aa-4b2481b826fc)
 
 <br><br>
 
@@ -337,6 +344,9 @@ output {
 <br><br>
 
 ## 💌 회고
-Ubuntu에는 다양한 Log들이 있는데 auth.log만 분석해 아쉬움이 남았다.
+Log 수집 프로젝트를 통해 ELK기술을 배울 수 있었습니다. Logstash에서 JDBC를 사용한 MySQL 데이터 자동 저장, SCP를 이용한 파일 전송을 학습했습니다. <br>
+auth.log 분석을 진행하면서 서버 로그를 분석할 수 있는 경험을 쌓았습니다. Kibana를 활용하여 로그 분석 결과를 시각화 해 효과적으로 표현할 수 있었습니다. <br>
+또한, Filebeat, Elasticsearch, Logstash, MysQL간의 연동 과정은 복작했지만, 이를 해결해가며 시스템 간 데이터 흐름에 대한 이해도를 깊이 있게 다질 수 있었습니다. <br>
+전체적으로, 실무와 관련된 다양한 기술을 배우고 이를 실제 환경에 적용해보는 기회가 되어 유익한 시간이었습니다. <br>
 
 
