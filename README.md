@@ -11,8 +11,9 @@
 5. [⚙ 아키텍쳐](#-아키텍쳐)
 6. [💻 주요 코드](#-주요-코드)
 7. [🔄 실행 환경 구성](#-실행-환경-구성)
-8. [🚨 트러블 슈팅](#-트러블-슈팅)
-9. [💌 회고](#-회고)
+8. [🖥 결과 화면](#-결과-화면)
+9. [🚨 트러블 슈팅](#-트러블-슈팅)
+10. [💌 회고](#-회고)
 
 <br>
 
@@ -91,9 +92,8 @@ SSH 연결 관련 로그를 분석하여 비정상적인 접근 시도를 확인
 
 ## ⚙ 아키텍쳐
 
-
 <div align=center> 
-  <img src="https://github.com/user-attachments/assets/af972e81-35b9-4051-8d30-473fc1ba0bee" width="600"/>
+  <img src="https://github.com/user-attachments/assets/e4e06c2f-b8ac-4e74-a010-ecbadfbb70a9" width="600"/>
 </div>
 
 <br> <br>
@@ -259,11 +259,9 @@ output {
 **6. log 정보를 MySQL에 영구 저장** <br>
   &emsp;  <img src="https://github.com/user-attachments/assets/8804e30f-d8eb-475a-97f4-a1e1ace5d62c" width="700">
 
-
-<br><br>
-
-
-## 📈 Kibana 시각화
+ <br>
+ 
+**7. Kibana 시각화 📈** <br> <br>
 **◌ 시간대별 접속빈도**　　　　　　　　　　　　　　　　　　　　　　　**◌ IP주소별로 특정시간대 15분 간격의 접속시도횟수**
 
 <img src="https://github.com/user-attachments/assets/2879bd8b-3831-4b39-8502-ccc54a445292" width="50%" heght="250"/><img src="https://github.com/user-attachments/assets/347a7cfc-5534-4bc4-a650-53c723a7b946" width="50%" height="250"/>
@@ -273,6 +271,13 @@ output {
 **◌ 접속여부별 시간당 그래프**　　　　　　　　　　　　　　　　　　　**◌ SSH접속 결과비율**
 
 <img src="https://github.com/user-attachments/assets/5702a4e5-2f0c-4aa4-a6ce-892375909080" width="60%" height="250"/><img src="https://github.com/user-attachments/assets/86c66f8e-3c4d-4874-a315-606501405bf1" width="30%" height="200"/>
+
+<br><br>
+
+## 🖥 결과 화면
+<div align=center> 
+  <img src="https://github.com/user-attachments/assets/fd19c532-886f-4e39-9364-d09c036c8f75" width="900">
+</div>
 
 
 <br><br>
@@ -285,7 +290,7 @@ output {
   1) 윈도우 공유 폴더 만들어서 우분투에 연결하기 위해 마운트 시키기
   2) Linux에 filebeat 설치
   3) SSH 파일 전송 프로토콜인 scp 명령어를 사용하여 log 파일 받기 <- 채택 ✔
-  4) 
+     
 <br><br>
 
 ### 2. logstash에서  logstash -f ../config/ubuntu.conf 실행시켰을 때 연결이 shutdown되는 에러 발생<br>
