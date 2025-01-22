@@ -11,6 +11,7 @@
 6. [💻 주요 코드](#-주요-코드)
 7. [🔄 실행 흐름](#-실행-흐름)
 8. [🚨 트러블 슈팅](#-트러블-슈팅)
+9. [회고](#-회고)
 
 <br>
 
@@ -85,8 +86,6 @@
 ## 💻 주요 코드 
 
 > **Get-Log.bat**
-
-
 ```
 # Ubuntu에 접속해 /var/log/auth.log 복사해서 C:\00.dataSet\auth.log 저장
 set REMOTE_USER=ubuntu
@@ -97,7 +96,6 @@ set LOCAL_PATH="C:\00.dataSet\auth.log"
 if exist "%LOCAL_PATH%" (
     del "%LOCAL_PATH%"
 )
-
 scp %REMOTE_USER%@%REMOTE_HOST%:%REMOTE_PATH% %LOCAL_PATH%
 ```
 
@@ -209,6 +207,9 @@ output {
    }
 }
 ```
+> output에 Elasticsearch과 MySQL을 사용하는 이유
+>
+> Log기록은 영구저장되야 하기 때문에 MySQL에 적재, Elasticsearch 에서는 최신 log 저장
 
 <br><br>
 
@@ -230,7 +231,8 @@ output {
 **🧩원인**
 - conf 파일 코드에서 쉼표(,)로 인한 오류<br>
 
-**🛎해결법**<br>
+**🛎해결법**
+<br>
 - conf 파일 문법에 맞도록 오류 코드 수정
 <br><br><br>
 
@@ -239,6 +241,18 @@ output {
 <br>
 1. 시작 위치 옵션을 사용하여 경로와 프로그램을 분리하기<br>
 
+### 4. logstash output을 jdbc 연결
+**🧩원인**
+- logstash는 공식적으로 jdbc output plugin을 지원하지 않음
+
+- **🛎해결법**
+<br>
+1. https://dev.mysql.com/downloads/connector/j/ MySQL Connector(Platform Independent) 설치
+2. https://github.com/theangryangel/logstash-output-jdbc 해당 외부 플러그인 설치
+3. logstash output jdbc 설정
+
+참고 : https://discuss.elastic.co/t/jdbc-for-input-and-output/186722
+   
 
 <img src="https://github.com/user-attachments/assets/bfe10537-45d4-4bb9-b9f7-2285dde10bcd" width="400"/>
 
@@ -254,4 +268,7 @@ output {
   - 전원 코드 연결하여 충전하면서 작업 스케쥴러 실행
   - 성공!!!⭕
 <br>
+
+## 회고
+Ubuntu에는 다양한 Log들이 있는데 auth.log만 분석해 아쉬움이 남았다. 
 =======
