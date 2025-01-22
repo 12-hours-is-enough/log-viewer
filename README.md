@@ -266,18 +266,21 @@ output {
  <br>
  
 **7. Kibana 시각화 📈** <br> <br>
-**◌ 시간대별 접속빈도**　　　　　　　　　　　　　　　　　　　　　**◌ IP주소별로 특정시간대 15분 간격의 접속시도횟수**
+**◌ 시간대별 접속빈도**　　　　　　　　　　　　　　             　          　　&emsp; **◌ IP주소별로 특정시간대 15분 간격의 접속시도횟수**
 
 <img src="https://github.com/user-attachments/assets/2879bd8b-3831-4b39-8502-ccc54a445292" width="50%" heght="250"/><img src="https://github.com/user-attachments/assets/347a7cfc-5534-4bc4-a650-53c723a7b946" width="50%" height="250"/>
 
 <br>
-
-**◌ 접속여부별 시간당 그래프**　　　　　　　　　　　　　　　　　　　**◌ SSH접속 결과비율**
+  
+**◌ 접속여부별 시간당 그래프**　　　　　　　　　　　　  　                   　　&emsp; **◌ SSH접속 결과비율**
 
 <img src="https://github.com/user-attachments/assets/5702a4e5-2f0c-4aa4-a6ce-892375909080" width="60%" height="250"/><img src="https://github.com/user-attachments/assets/86c66f8e-3c4d-4874-a315-606501405bf1" width="30%" height="200"/>
 
+<br>
+
 **8. Kibana 외부접속 허용** <br>
-![image](https://github.com/user-attachments/assets/3033e6f1-1603-4c98-a5aa-4b2481b826fc)
+<img src="https://github.com/user-attachments/assets/3033e6f1-1603-4c98-a5aa-4b2481b826fc" width="500">
+
 
 <br><br>
 
@@ -287,7 +290,7 @@ output {
 </div>
 
 
-<br><br>
+<br>
 　　
 
 ## 🚨 트러블 슈팅
@@ -298,7 +301,7 @@ output {
   2) Linux에 filebeat 설치
   3) SSH 파일 전송 프로토콜인 scp 명령어를 사용하여 log 파일 받기 <- 채택 ✔
      
-<br><br>
+<br>
 
 ### 2. logstash에서  logstash -f ../config/ubuntu.conf 실행시켰을 때 연결이 shutdown되는 에러 발생<br>
   &ensp; **⚠️ 원인**
@@ -307,7 +310,7 @@ output {
   &ensp; **🛎 해결법**
   - conf 파일 문법에 맞도록 오류 코드 수정
 
-<br><br>
+<br>
 
 ### 3. 윈도우의 작업 스케쥴러에 등록한 배치파일이 정상적인 실행이 안되는 오류
   &ensp; **🛎 해결법**
@@ -327,16 +330,16 @@ output {
     - 전원 코드 연결하여 충전하면서 작업 스케쥴러 실행
     - 성공!!!⭕
 
-<br><br>
+<br>
 
 ### 4. logstash output을 jdbc 연결
 &ensp; **⚠️ 원인**
-- logstash는 공식적으로 jdbc output plugin을 지원하지 않음<br>
+  - logstash는 공식적으로 jdbc output plugin을 지원하지 않음<br>
 
 &ensp; **🛎 해결법**
 <br>
-  1. https://dev.mysql.com/downloads/connector/j/ MySQL Connector(Platform Independent) 설치<br>
-  2. https://github.com/theangryangel/logstash-output-jdbc 해당 외부 플러그인 설치<br>
+  1. [MySQL Connector(Platform Independent)](https://dev.mysql.com/downloads/connector/j/) 설치<br>
+  2. 해당 외부 플러그인(https://github.com/theangryangel/logstash-output-jdbc) 설치<br>
   3. logstash output jdbc 설정<br>
 
 > 참고 : https://discuss.elastic.co/t/jdbc-for-input-and-output/186722
@@ -344,7 +347,7 @@ output {
 <br><br>
 
 ## 💌 회고
-Log 수집 프로젝트를 통해 ELK기술을 배울 수 있었습니다. Logstash에서 JDBC를 사용한 MySQL 데이터 자동 저장, SCP를 이용한 파일 전송을 학습했습니다. <br>
+> Log 수집 프로젝트를 통해 ELK기술을 배울 수 있었습니다. Logstash에서 JDBC를 사용한 MySQL 데이터 자동 저장, SCP를 이용한 파일 전송을 학습했습니다. <br>
 auth.log 분석을 진행하면서 서버 로그를 분석할 수 있는 경험을 쌓았습니다. Kibana를 활용하여 로그 분석 결과를 시각화 해 효과적으로 표현할 수 있었습니다. <br>
 또한, Filebeat, Elasticsearch, Logstash, MysQL간의 연동 과정은 복작했지만, 이를 해결해가며 시스템 간 데이터 흐름에 대한 이해도를 깊이 있게 다질 수 있었습니다. <br>
 전체적으로, 실무와 관련된 다양한 기술을 배우고 이를 실제 환경에 적용해보는 기회가 되어 유익한 시간이었습니다. <br>
