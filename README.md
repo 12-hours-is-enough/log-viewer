@@ -240,9 +240,8 @@ output {
 <br><br>
 
 **6. log 정보를 MySQL에 영구 저장**<br>
-- 방법?
+  ![image](https://github.com/user-attachments/assets/8804e30f-d8eb-475a-97f4-a1e1ace5d62c)
 
-- 사진
 <br><br>
 
 **7. ES의 log 정보를 Kibana로 시각화**
