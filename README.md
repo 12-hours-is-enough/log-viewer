@@ -216,14 +216,14 @@ output {
 
 ## 🔄 실행 환경 구성
 
-### 1. conf 파일(ubuntu.conf)과 yml 파일(filebeat_ubuntu.yml) 설정<br>
-### 2. scp 명령어로 Linux의 auth.log 파일 복사
+**1. conf 파일(ubuntu.conf)과 yml 파일(filebeat_ubuntu.yml) 설정**<br><br>
+**2. scp 명령어로 Linux의 auth.log 파일 복사**<br>
 　```
 　scp ubuntu@127.0.0.1:/var/log/auth.log C:\00.dataSet
 　```
-<br>
-### 3. .bat 파일 생성하여 실행 자동화<br>
-### 4. .bat 파일을 스케쥴러에 등록
+<br><br>
+**3. .bat 파일 생성하여 실행 자동화**<br><br>
+**4. .bat 파일을 스케쥴러에 등록**<br>
 
 - 방법 1.<br>
 　```
@@ -233,19 +233,19 @@ output {
 
 - 방법 2.<br>
 　![image](https://github.com/user-attachments/assets/bc0cc444-e506-458b-9024-14b68edf223e)
-<br>
+<br><br>
 
-### 5. 스케쥴러를 이용한 자동 로그 갱신이 ElasticSearch에 전송되었는지 확인<br>
+**5. 스케쥴러를 이용한 자동 로그 갱신이 ElasticSearch에 전송되었는지 확인**<br>
 　![image](https://github.com/user-attachments/assets/e5b9b6b7-8361-4b50-bc6c-6bc77ac54df3)
 <br><br>
 
-### 6. log 정보를 MySQL에 영구 저장
+**6. log 정보를 MySQL에 영구 저장**<br>
 - 방법?
 
 - 사진
-<br>
+<br><br>
 
-### 7. ES의 log 정보를 Kibana로 시각화
+**7. ES의 log 정보를 Kibana로 시각화**
 
 <br><br>
 ## Kibana 대시보드?시각화?
