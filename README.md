@@ -241,19 +241,6 @@ output {
 <br>
 1. 시작 위치 옵션을 사용하여 경로와 프로그램을 분리하기<br>
 
-### 4. logstash output을 jdbc 연결
-**🧩원인**
-- logstash는 공식적으로 jdbc output plugin을 지원하지 않음
-
-- **🛎해결법**
-<br>
-1. https://dev.mysql.com/downloads/connector/j/ MySQL Connector(Platform Independent) 설치
-2. https://github.com/theangryangel/logstash-output-jdbc 해당 외부 플러그인 설치
-3. logstash output jdbc 설정
-
-참고 : https://discuss.elastic.co/t/jdbc-for-input-and-output/186722
-   
-
 <img src="https://github.com/user-attachments/assets/bfe10537-45d4-4bb9-b9f7-2285dde10bcd" width="400"/>
 
 - 프로그램/스크립트 빈칸에 파일 위치가 모두 적혀있었음
@@ -267,7 +254,21 @@ output {
 
   - 전원 코드 연결하여 충전하면서 작업 스케쥴러 실행
   - 성공!!!⭕
+<br><br><br>
+
+### 4. logstash output을 jdbc 연결
+**🧩원인**
+- logstash는 공식적으로 jdbc output plugin을 지원하지 않음<br>
+
+- **🛎해결법**
 <br>
+1. https://dev.mysql.com/downloads/connector/j/ MySQL Connector(Platform Independent) 설치<br>
+2. https://github.com/theangryangel/logstash-output-jdbc 해당 외부 플러그인 설치<br>
+3. logstash output jdbc 설정<br>
+
+참고 : https://discuss.elastic.co/t/jdbc-for-input-and-output/186722
+   
+
 
 ## 회고
 Ubuntu에는 다양한 Log들이 있는데 auth.log만 분석해 아쉬움이 남았다. 
