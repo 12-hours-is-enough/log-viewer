@@ -240,10 +240,12 @@ output {
 1. 시작 위치 옵션을 사용하여 경로와 프로그램을 분리하기<br>
 
 
-![image](https://github.com/user-attachments/assets/bfe10537-45d4-4bb9-b9f7-2285dde10bcd)
+<img src="https://github.com/user-attachments/assets/bfe10537-45d4-4bb9-b9f7-2285dde10bcd" width="400"/>
+
 - 프로그램/스크립트 빈칸에 파일 위치가 모두 적혀있었음
 
-![image](https://github.com/user-attachments/assets/2d30ab5f-0687-4646-8359-4c8972ff50a3)
+<img src="https://github.com/user-attachments/assets/2d30ab5f-0687-4646-8359-4c8972ff50a3" width="400"/>
+
 - 경로를 시작 위치로 따로 적어주고 프로그램만 남겨둠
 - 해결 안됨❌<br><br>
 
