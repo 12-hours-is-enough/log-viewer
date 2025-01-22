@@ -1,4 +1,5 @@
-# log-viewer 📝
+
+## log-viewer 📝
 
 <br>
 
@@ -15,10 +16,12 @@
 
 <br>
 
+
 ## ⏲ TEAM 12시간이 모자라 
 ### 팀원 소개
 <div align=center> 
   
+
 |<img src="https://avatars.githubusercontent.com/u/95984922?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/165532198?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/121565744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/179544856?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |나홍찬<br/>[@nahong_c](https://github.com/HongChan1412)|김소연<br/>[@ssoyeonni](https://github.com/ssoyeonni)|이은정<br/>[@eundeom](https://github.com/eundeom)|이은준<br/>[@2EunJun](https://github.com/2EunJun)|
@@ -35,7 +38,7 @@
 ⇢ 서버 관리자가 로그 데이터를 효과적으로 분석할 수 있도록 도와주는 시스템을 구축 하는 것이 목표입니다. <br> 
 우분투 서버 접속 기록을 실시간으로 모니터링하고, 로그인 성공/실패 여부, 접속자 IP 등을 시각적으로 확인할 수 있도록 하여, <br>
 <b>서버 보안을 강화</b>하고 <b>로그 데이터를 쉽게 추적</b>할 수 있는 환경을 제공합니다. <br> 
-이는 서버 관리자의 효율적인 문제 해결과 의사 결정을 돕기 위한 연습이기도 합니다.
+
 
 <br><br>
 
@@ -76,6 +79,7 @@
 <br><br>
 
 ## ⚙ 아키텍쳐
+
 
 <div align=center> 
   <img src="https://github.com/user-attachments/assets/af972e81-35b9-4051-8d30-473fc1ba0bee" width="600"/>
@@ -207,19 +211,57 @@ output {
    }
 }
 ```
+
+<br><br>
+
+## 🔄 실행 환경 구성
+
+### 1. conf 파일(ubuntu.conf)과 yml 파일(filebeat_ubuntu.yml) 설정<br>
+### 2. scp 명령어로 Linux의 auth.log 파일 복사
+　```
+　scp ubuntu@127.0.0.1:/var/log/auth.log C:\00.dataSet
+　```
+<br>
+### 3. .bat 파일 생성하여 실행 자동화<br>
+### 4. .bat 파일을 스케쥴러에 등록
+
+- 방법 1.<br>
+　```
+　schtasks /create /tn "10분마다 실행하는 작업" /tr "C:\경로\프로그램.exe" /sc minute /mo 10
+　```
+<br>
+
+- 방법 2.<br>
+　![image](https://github.com/user-attachments/assets/bc0cc444-e506-458b-9024-14b68edf223e)
+<br>
+
+### 5. 스케쥴러를 이용한 자동 로그 갱신이 ElasticSearch에 전송되었는지 확인<br>
+　![image](https://github.com/user-attachments/assets/e5b9b6b7-8361-4b50-bc6c-6bc77ac54df3)
+<br><br>
+
+### 6. log 정보를 MySQL에 영구 저장
+- 방법?
+
+- 사진
+<br>
+
+### 7. ES의 log 정보를 Kibana로 시각화
+
+<br><br>
+## Kibana 대시보드?시각화?
+=======
 > output에 Elasticsearch과 MySQL을 사용하는 이유
 >
 > Log기록은 영구저장되야 하기 때문에 MySQL에 적재, Elasticsearch 에서는 최신 log 저장
 
-<br><br>
-
-## 🔄 실행 흐름
 
 
 <br><br>
 　　
+
 ## 🚨 트러블 슈팅
 ### 1. Windows에서 SSH 연결로 Linux의 데이터를 가져오는 과정에서 에러 발생 <br>
+
 
 **🛎해결법**
 1) 윈도우 공유 폴더 만들어서 우분투에 연결하기 위해 마운트 시키기
@@ -251,7 +293,6 @@ output {
 - 해결 안됨❌<br><br>
 
 2. 전원 코드 연결<br>
-
   - 전원 코드 연결하여 충전하면서 작업 스케쥴러 실행
   - 성공!!!⭕
 <br><br><br>
